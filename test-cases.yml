@@ -64,3 +64,32 @@
     - На любом товаре кликаем на кнопку "В корзину"
   expected-result: |
     Товар должен быть добавлен в корзину пользователя
+
+- summary: |
+    Проверка безопасности и защищенности данных пользователей
+  requirement: |
+    Сайт должен быть устойчив к возможным атакам
+  prerequisites:
+    no
+  test-data: |
+    - <script>alert('Пришлите денег')</script>
+  steps:
+    - Вводим в поиске JavaScript код 
+  expected-result: |
+    Сайт должен выдать, что ничего не найдено
+
+- summary: |
+    Проверка работы сайта на различных устройствах
+  requirement: |
+    Сайт должен быть адаптивным
+  prerequisites:
+    Открыта панель DevTools
+  test-data: |
+    - iPhone 12 Pro
+    - Samsung Galaxy S20 Ultra
+  steps:
+    - Открываем вкладку Toggle device toolbar
+    - Выбираем iPhone 12 Pro, Samsung Galaxy S20 Ultra
+    - Проверяем работу сайта (кликаем на товар, добавляем товар в корзину и тд) 
+  expected-result: |
+    Сайт доллжен корректно работать
